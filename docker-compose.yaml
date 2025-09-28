@@ -1,0 +1,10 @@
+services:
+  ryse-crawler:
+    build: .
+    container_name: protein_crawler
+    restart: unless-stopped
+    volumes:
+      - ./config:/app/config   # so you can edit config locally
+    environment:
+      - TZ=UTC
+      - PYTHONUNBUFFERED=1
